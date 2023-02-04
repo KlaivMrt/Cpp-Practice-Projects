@@ -1,0 +1,26 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "C/C++: g++.exe build 12.2.0",
+			"command": "C:\\Users\\evang\\mingw64\\bin\\g++.exe",
+			"args": [
+				"-fdiagnostics-color=always",
+				"-std=c++20",
+				"-g",
+				"${workspaceFolder}\\source\\implementations\\*.cpp",
+				"-o",
+				"${workspaceFolder}\\bin\\tic-tac-toe.exe"
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
+			"detail": "compiler: C:\\Users\\evang\\mingw64\\bin\\g++.exe"
+		}
+	]
+}
