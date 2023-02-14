@@ -25,13 +25,6 @@ const char * exception::what() const noexcept
     return message;
 }
 
-// Destructor
-
-exception::~exception()
-{
-    delete[] message;
-}
-
 // out_of_bounds
 // Constructors
 
@@ -46,6 +39,25 @@ out_of_bounds::out_of_bounds(char * msg) :  exception {msg}
 // Memebr functions
 
 const char * out_of_bounds::what() const noexcept
+{
+    return message;
+}
+
+//negtive_parameter
+//Constructors
+
+negative_parameter::negative_parameter()
+{
+    message = "negative argument provided in positive paremeter";
+}
+
+negative_parameter::negative_parameter(char * msg) : exception (msg)
+{}
+
+negative_parameter::negative_parameter(string msg) : exception (msg.c_str())
+{}
+
+const char * negative_parameter::what() const noexcept
 {
     return message;
 }
