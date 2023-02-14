@@ -8,6 +8,7 @@ using std::endl;
 using std::ostream;
 using exceptions::exception;
 using exceptions::out_of_bounds;
+using exceptions::negative_parameter;
 
 namespace game
 {
@@ -20,34 +21,31 @@ Person::~Person()
 
 // Memebr Functions
 
-void Person::set_name() noexcept
+void Person::set_name()
 {
     name = new char [11] {};
     cout << ">> >> ";
     cin.getline(name, 11);
-    cout << endl;
     cin.clear();
 }
 
 void Person::set_sign()
 {
-    // do
-    // {
-        // try
-        // {
-            cout << ">> >> ";
-            cin >> sign;
-            cout << endl;
-            cin.clear();
-            if (sign != 1 && sign != 2) throw out_of_bounds {};
-            // break;
-        // }
-    //     catch(const exception & e)
-    //     {
-    //         cout << e.what() << "\n try again" << endl;
-    //     }
-        
-    // } while(true);
+    cout << ">> >> ";
+    cin >> sign;
+    cin.ignore();
+    if (sign != 1 && sign != 2) throw out_of_bounds {};
+}
+
+void Person::set_sign(int n_sign)
+{
+    // if (n_sign < 1) throw negative_parameter {};
+    sign = static_cast<unsigned short>(n_sign);
+}
+
+unsigned short Person::get_sign()
+{
+    return sign;
 }
 
 // Operators
