@@ -63,15 +63,22 @@ void Board::q_sort(unsigned short * array, int low, int high)
  
 unsigned short Board::check()
 {
-    if (grid[0] == grid[4] == grid[8]) return grid[0];
-    if (grid[2] == grid[4] == grid[5]) return grid[2];
-    if (grid[0] == grid[1] == grid[2]) return grid[0];
-    if (grid[3] == grid[4] == grid[5]) return grid[3];
-    if (grid[6] == grid[7] == grid[8]) return grid[6];
-    if (grid[0] == grid[3] == grid[6]) return grid[0];
-    if (grid[1] == grid[4] == grid[7]) return grid[1];
-    if (grid[2] == grid[5] == grid[8]) return grid[2];
+    if (grid[0] == grid[4] && grid[4] == grid[8]) return grid[0];
+    if (grid[2] == grid[4] && grid[4] == grid[5]) return grid[2];
+    if (grid[0] == grid[1] && grid[1] == grid[2]) return grid[0];
+    if (grid[3] == grid[4] && grid[4] == grid[5]) return grid[3];
+    if (grid[6] == grid[7] && grid[7] == grid[8]) return grid[6];
+    if (grid[0] == grid[3] && grid[3] == grid[6]) return grid[0];
+    if (grid[1] == grid[4] && grid[4] == grid[7]) return grid[1];
+    if (grid[2] == grid[5] && grid[5] == grid[8]) return grid[2];
     return 0;
+}
+
+//Operator Oveloads
+
+unsigned short & Board::operator[](unsigned int index)
+{
+    return grid[index];
 }
 
 }

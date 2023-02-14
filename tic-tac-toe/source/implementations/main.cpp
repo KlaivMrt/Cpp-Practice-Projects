@@ -45,6 +45,10 @@ int main()
     // cin >> x;
     // cout << x << endl;
 
+    // Board b;
+    // b[1] = 1;
+    // b.display();
+
     tic_tac_toe me;
-    me.get_players();
+    me.run();
 }
