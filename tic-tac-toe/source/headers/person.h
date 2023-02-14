@@ -23,8 +23,10 @@ class Person
     ~Person();
 
     // Member functions
-    void set_name() noexcept;
+    void set_name();
     void set_sign();
+    void set_sign(int);
+    unsigned short get_sign();
     void reset_score();
 
     // operators

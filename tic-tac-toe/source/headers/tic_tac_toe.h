@@ -20,11 +20,12 @@ class tic_tac_toe
     Board board;
     Person player1;
     Person player2;
-    Person * current_player;
+    Person * current_player = & player2;
+    void get_players();
+    int get_position();
+    int get_index();
 
     public:
-    void get_players();
-    int get_index();
 
     void run();
 
